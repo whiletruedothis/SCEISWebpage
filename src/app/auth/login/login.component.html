@@ -1,0 +1,15 @@
+<div class="login-section">
+  <div class="form">
+    <form [formGroup]="loginForm" autocomplete="off">
+      <div class="input-section">
+        <label class="input-label">Correo</label>
+        <input type="email" class="input-form" formControlName="email">
+      </div>
+      <div class="input-section">
+        <label class="input-label">Contraseña</label>
+        <input type="password" class="input-form" formControlName="password">
+      </div>
+    </form>
+    <button class="form-button" (click)="login()">Ingresar</button>
+  </div>
+</div>
