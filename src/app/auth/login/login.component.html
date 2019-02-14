@@ -10,6 +10,6 @@
         <input type="password" class="input-form" formControlName="password">
       </div>
     </form>
-    <button class="form-button" (click)="login()">Ingresar</button>
+    <button class="form-button" (click)="login()" [ngClass]="{ 'disabled-button': loginForm.invalid }"  [disabled]="loginForm.invalid">Ingresar</button>
   </div>
 </div>

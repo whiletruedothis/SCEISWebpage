@@ -35,6 +35,7 @@
                 border-radius: 10px;
                 border: none;
                 margin: 6px 0px;
+                outline: none;
             }
         }
         .form-button {
@@ -44,9 +45,19 @@
             width: 50%;
             border-radius: 8px;
             border: none;
-            box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.23);
+            box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.23);
             background-color: #224afb;
             color: white;
+            outline: none;
+            &:active {
+                background-color: #0e2aa7;
+                box-shadow: none;
+            }
+        }
+        .disabled-button {
+            background: #bdb9b9;
+            color: rgb(99, 97, 97);
+            box-shadow: none;
         }
     }
 }
