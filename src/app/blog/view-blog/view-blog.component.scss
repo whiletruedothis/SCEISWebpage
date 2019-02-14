@@ -1,0 +1,49 @@
+.main {
+    position: absolute;
+    top: 71px;
+    width: 100%;
+}
+
+.title {
+    height: 34px;
+    font-family: Helvetica;
+    text-align: center;
+    color: #0f2998;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 63px;
+}
+
+.content {
+    margin-top: 68px;
+    width: 100%;
+    display: flex;
+}
+
+.leftText {
+    width: 50%;
+    text-align: justify;
+}
+
+.rightImage {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    text-align: center;
+    height: fit-content;
+}
+
+.image {
+    width: 380px;
+}
+
+.text {
+    margin-left: 150px;
+    margin-right: 50px;
+}
+
+.date {
+    position: absolute;
+    bottom: 1%;
+    right: 25%;
+}

@@ -9,7 +9,11 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [NavbarComponent, WrapperComponent, FooterComponent],
+  declarations: [
+    NavbarComponent,
+    WrapperComponent,
+    FooterComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
