@@ -1,3 +1,4 @@
+import { BlogService } from './../../shared/services/blog.service';
 import { Blog } from './../../shared/models/blog';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -75,7 +76,7 @@ export class CreateBlogComponent implements OnInit {
   blog: Blog;
   @ViewChild('fileInput') fileInput: ElementRef;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private blogService: BlogService) {
     this.imageUrl = 'https://st.depositphotos.com/1158045/4197/i/950/depositphotos_41979079-stock-photo-people-studying-in-a-library.jpg';
     this.blog = new Blog();
   }
@@ -93,8 +94,9 @@ export class CreateBlogComponent implements OnInit {
 
   saveForm() {
     this.blog = this.blogForm.value;
-    this.blog.imageFile = this.imageFile;
-    console.log(this.blog);
+    const fecha = new Date().toLocaleDateString();
+    this.blog.date = fecha;
+    this.blogService.createBlog(this.blog, this.imageFile);
   }
 
   loadImage() {
