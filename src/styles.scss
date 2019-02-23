@@ -1,4 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/shared-classes.scss";
+
+
+//In this file we reset ugly properties of css
 
 * {
     margin: 0px;
@@ -11,4 +14,8 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+button {
+    border: none;
 }
