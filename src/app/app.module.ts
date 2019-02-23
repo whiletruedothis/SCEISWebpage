@@ -14,10 +14,14 @@ import { environment } from 'src/environments/environment';
 // Component
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
