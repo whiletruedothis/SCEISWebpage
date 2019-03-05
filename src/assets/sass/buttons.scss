@@ -1,0 +1,11 @@
+@import './colors.scss';
+
+.is-principal-button {
+    width: 253px;
+    height: 57px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: $white;
+    background-color: $blue;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.23);
+}

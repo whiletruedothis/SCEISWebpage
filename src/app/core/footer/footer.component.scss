@@ -1,19 +1,19 @@
+@import '../../../assets/sass/colors.scss';
+@import '../../../assets/sass/icons.scss';
+
 .footer {
     position: fixed;
-    left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #2a2a2a;
-    color: white;
     text-align: center;
+    color: $white;
+    background-color: $black;
 }
 
 ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #111;
 }
 
 li {
@@ -22,9 +22,8 @@ li {
 
 li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
+    color:$white;
 }

@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 // Routes
 import { AppRoutingModule } from './app-routing.module';
 
+// Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -15,10 +14,14 @@ import { environment } from 'src/environments/environment';
 // Component
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
