@@ -1,14 +1,14 @@
 <div class='main'>
-    <div class='listContainer'>
+    <div class='list-container'>
         <div class='title'>
             <p>Blog</p>
         </div>
         <div class='list'>
-            <div class='blogContainer' *ngFor='let blog of blogs'>
-                <div class='imgContainer'>
-                    <img class='imgBlog' src={{blog.imageUrl}}>
+            <div class='blog-container' *ngFor='let blog of blogs'>
+                <div class='img-container'>
+                    <img class='img-blog' src={{blog.imageUrl}}>
                 </div>
-                <div class='blogTitle'>
+                <div class='blog-title'>
                     <p>{{blog.title}}</p>
                 </div>
             </div>
