@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
+
+// Firebase
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import * as firebase from 'firebase';
 
+// Model
+import { Blog } from './../models/blog';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +31,8 @@ export class BlogService {
         });
       }
     );
+  }
+  getBlogs() {
+    return this.afs.collection('blogs').snapshotChanges();
   }
 }

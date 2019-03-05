@@ -1,0 +1,17 @@
+<div class='main'>
+    <div class='list-container'>
+        <div class='title'>
+            <p>Blog</p>
+        </div>
+        <div class='list'>
+            <div class='blog-container' *ngFor='let blog of blogs'>
+                <div class='img-container'>
+                    <img class='img-blog' src={{blog.imageUrl}}>
+                </div>
+                <div class='blog-title'>
+                    <p>{{blog.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
