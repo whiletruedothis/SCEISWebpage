@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,11 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  isFailedLogged: boolean;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.isFailedLogged = false;
+  }
 
   ngOnInit() {
     this.initializeForm();
@@ -25,11 +29,23 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isFailedLogged = false;
     this.authService.login(this.loginForm.value).then(
       res => {
-        console.log(res);
+        this.router.navigate(['']);
       }
-    );
+    ).catch(err => {
+      console.log(err);
+      this.isFailedLogged = true;
+    });
+  }
+
+  errorMessage(field) {
+    if (this.loginForm.get(field).hasError('required')) {
+      return 'Se requiere de este campo';
+    } else {
+      return 'Formato de email invalido';
+    }
   }
 
 }

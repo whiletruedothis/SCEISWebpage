@@ -1,11 +1,14 @@
 .login-section {
     background: #2a2a2a;
-    height: 100vh;
+    height: 94vh;
     display: flex;
     justify-content: center;
+    @media (max-width: 830px) and (orientation: landscape) {
+        height: 140vh;
+    }
     .form {
         width: 350px;
-        height: 240px;
+        height: 280px;
         background: #cecaca;
         border-radius: 10px;
         align-self: center;
@@ -16,7 +19,7 @@
         }
         .input-section {
             align-self: center;
-            margin: 20px 55px;
+            margin: 15px 35px;
             font-family: Helvetica;
             .input-label {
                 font-size: 18px;
@@ -37,12 +40,22 @@
                 margin: 6px 0px;
                 outline: none;
             }
+            .error-input {
+                font-size: 12px;
+                text-align: center;
+                color: red;
+                margin: 5px 0px;
+            }
+            
+        }
+        .hidden {
+            visibility: hidden;   
         }
         .form-button {
             align-self: center;
             font-family: Helvetica;
             height: 40px;
-            width: 50%;
+            width: 80%;
             border-radius: 8px;
             border: none;
             box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.23);
@@ -59,5 +72,11 @@
             color: rgb(99, 97, 97);
             box-shadow: none;
         }
+        .invalid-text {
+            text-align: center;
+            margin: 10px;
+            color: red;
+            font-size: 14px;
+        }     
     }
 }

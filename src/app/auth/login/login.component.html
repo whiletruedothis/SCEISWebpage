@@ -4,12 +4,22 @@
       <div class="input-section">
         <label class="input-label">Correo</label>
         <input type="email" class="input-form" formControlName="email">
+        <div>
+          <p class="error-input" [ngClass]="{ 'hidden': (!loginForm.get('email').hasError('pattern') && !loginForm.get('email').hasError('required')) || !loginForm.get('email').touched }">{{ errorMessage('email') }}</p>
+        </div>
       </div>
       <div class="input-section">
         <label class="input-label">Contraseña</label>
         <input type="password" class="input-form" formControlName="password">
+        <div [ngClass]="{'hidden': !loginForm.get('password').hasError('required') || !loginForm.get('password').touched }">
+          <p class="error-input">Se requiere de este campo</p>
+        </div>
       </div>
     </form>
     <button class="form-button" (click)="login()" [ngClass]="{ 'disabled-button': loginForm.invalid }"  [disabled]="loginForm.invalid">Ingresar</button>
+    <div *ngIf="isFailedLogged">
+      <p class="invalid-text">Email/Password incorrecto</p>
+    </div>
   </div>
+  
 </div>
