@@ -4,7 +4,7 @@
             <p>Blog</p>
         </div>
         <div class='list'>
-            <div class='blog-container' *ngFor='let blog of blogs'>
+            <div class='blog-container' *ngFor='let blog of blogs' (click)="showBlog(blog.id)">
                 <div class='img-container'>
                     <img class='img-blog' src={{blog.imageUrl}}>
                 </div>
@@ -13,5 +13,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="isAdmin" class="button-section">
+        <button (click)="createBlog()" class="button">Crear Blog</button>
     </div>
 </div>

@@ -5,10 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ViewBlogComponent } from './view-blog/view-blog.component';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 export const routes: Routes = [
-  { path: 'view', component: ViewBlogComponent },
+  { path: 'view/:id', component: ViewBlogComponent },
   { path: 'create', component: CreateBlogComponent },
+  { path: 'edit/:id', component: EditBlogComponent },
   { path: 'list', component: BlogListComponent }
 ];
 

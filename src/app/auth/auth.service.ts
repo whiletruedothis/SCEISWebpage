@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { map, first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,9 @@ export class AuthService {
       });
     });
   }
+
+  isLogged() {
+    return this.afauth.authState.pipe(first());
+  }
+
 }
