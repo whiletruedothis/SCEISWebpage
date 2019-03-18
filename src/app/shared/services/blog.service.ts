@@ -25,6 +25,7 @@ export class BlogService {
       () => {
         uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
           blog.imageUrl = downloadUrl;
+          blog.imageFile = null;
           this.afs.collection('blogs').add(blog);
         });
       }
@@ -37,6 +38,30 @@ export class BlogService {
 
   getBlogById(blogId) {
     return this.afs.collection('blogs').doc(blogId).snapshotChanges();
+  }
+
+  editBlog(blog: any , idBlog: string, imageFile?: any) {
+    if (imageFile) {
+      const storageRef = firebase.storage().ref();
+      const uploadTask = storageRef.child('blogs/' + blog.title + '/' + imageFile.name).put(imageFile);
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+        (snapshot) =>  {
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
+            blog.imageUrl = downloadUrl;
+            blog.imageFile = null;
+            this.afs.collection('blogs').doc(idBlog).set(blog);
+          });
+        }
+      );
+    } else {
+      blog.imageFile = null;
+      this.afs.collection('blogs').doc(idBlog).set(blog);
+    }
   }
 
 }

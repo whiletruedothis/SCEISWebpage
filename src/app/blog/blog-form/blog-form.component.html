@@ -11,6 +11,6 @@
       </div>
   </div>
   <div class="submit-section">
-      <button class="submit-button" (click)="saveForm()" [disabled]="blogForm.invalid || !this.imageFile" [ngClass]="{ 'disabled': blogForm.invalid || !this.imageFile }">Guardar</button>
+      <button class="submit-button" (click)="saveForm()" [disabled]="blogForm.invalid || !this.imageFile && !this.isEditing" [ngClass]="{ 'disabled': blogForm.invalid || !this.imageFile && !this.isEditing }">Guardar</button>
   </div>
 </form>

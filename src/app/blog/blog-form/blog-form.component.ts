@@ -10,9 +10,6 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 })
 export class BlogFormComponent implements OnInit {
 
-  @Input() idBlog: string;
-  blog: any;
-  @Output() submit: EventEmitter<any>;
   options = {
     charCounterCount: false,
     placeholderText: 'Escriba aquí',
@@ -76,19 +73,26 @@ export class BlogFormComponent implements OnInit {
   blogForm: FormGroup;
   imageUrl: string;
   imageFile: FileList;
+  isEditing: boolean;
   @ViewChild('fileInput') fileInput: ElementRef;
+  @Input() idBlog: string;
+  @Output() submitBlog: EventEmitter<any>;
+  blog: any;
 
   constructor(private fb: FormBuilder, private blogService: BlogService) {
-    this.imageUrl = 'https://st.depositphotos.com/1158045/4197/i/950/depositphotos_41979079-stock-photo-people-studying-in-a-library.jpg';
+    this.imageUrl = 'assets/images/image-base.png';
     this.blog = new Blog();
-    this.submit = new EventEmitter();
+    this.submitBlog = new EventEmitter();
+    this.isEditing = false;
   }
 
   ngOnInit() {
     this.createForm();
     if (this.idBlog) {
+      this.isEditing = true;
       this.blogService.getBlogById(this.idBlog).subscribe(result => {
         this.blog = result.payload.data();
+        this.imageUrl = this.blog.imageUrl;
         this.initializeForm();
       });
     }
@@ -109,10 +113,11 @@ export class BlogFormComponent implements OnInit {
   }
 
   saveForm() {
+    const url = this.blog.imageUrl;
     this.blog = this.blogForm.value;
     const fecha = new Date().toLocaleDateString();
     this.blog.date = fecha;
-    this.blogService.createBlog(this.blog, this.imageFile);
+    this.submitBlog.emit({ ... this.blog, imageUrl: url, imageFile: this.imageFile });
   }
 
   loadImage() {
