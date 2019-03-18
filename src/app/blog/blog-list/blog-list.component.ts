@@ -49,7 +49,7 @@ export class BlogListComponent implements OnInit {
   }
 
   createBlog() {
-    console.log('created');
+    this.router.navigate(['blog/create']);
   }
 
 }

@@ -1,0 +1,16 @@
+<form [formGroup]="blogForm" autocomplete="off">
+  <div class="input-field">
+      <input type="text" placeholder="titulo" class="input" formControlName="title" maxlength="150">
+  </div>
+  <div class="editor-section">
+      <div class="editor" [froalaEditor]="options" formControlName="text"></div>
+      <div class="image-section">
+          <img class="image" src="{{ imageUrl }}">
+          <button class="image-button" (click)="loadImage()">Subir imagen</button>
+          <input type="file" class="image-hidden" (change)="changeImage($event)" #fileInput>
+      </div>
+  </div>
+  <div class="submit-section">
+      <button class="submit-button" (click)="saveForm()" [disabled]="blogForm.invalid || !this.imageFile" [ngClass]="{ 'disabled': blogForm.invalid || !this.imageFile }">Guardar</button>
+  </div>
+</form>

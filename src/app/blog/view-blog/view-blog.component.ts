@@ -3,7 +3,6 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 import { Blog } from 'src/app/shared/models/blog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-view-blog',
@@ -39,7 +38,7 @@ export class ViewBlogComponent implements OnInit {
   }
 
   editBlog() {
-    this.router.navigate(['']);
+    this.router.navigate(['blog/edit/', this.route.snapshot.params.id]);
   }
 
 }
