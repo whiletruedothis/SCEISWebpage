@@ -11,4 +11,7 @@
             </div>
         </div>
     </div>
+    <div *ngIf="isAdmin" class="button-section">
+        <button (click)="editBlog()" class="button">Editar</button>
+    </div>
 </div>
