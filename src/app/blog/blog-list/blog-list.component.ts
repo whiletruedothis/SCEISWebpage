@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 // Service
 import { BlogService } from './../../shared/services/blog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-list',
@@ -13,7 +14,7 @@ export class BlogListComponent implements OnInit {
 
   blogs: any[];
 
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService, private router: Router) { }
 
   ngOnInit() {
     this.blogService.getBlogs().subscribe(actionArray => {
@@ -24,6 +25,10 @@ export class BlogListComponent implements OnInit {
           };
         });
     });
+  }
+
+  showBlog(blogId) {
+    this.router.navigate(['blog/view', blogId]);
   }
 
 }

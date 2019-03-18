@@ -7,7 +7,7 @@ import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 
 export const routes: Routes = [
-  { path: 'view', component: ViewBlogComponent },
+  { path: 'view/:id', component: ViewBlogComponent },
   { path: 'create', component: CreateBlogComponent },
   { path: 'list', component: BlogListComponent }
 ];

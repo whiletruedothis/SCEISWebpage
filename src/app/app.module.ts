@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
@@ -32,7 +32,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     AngularFireStorageModule,
     CoreModule
   ],
-  providers: [],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
