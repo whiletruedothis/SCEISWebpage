@@ -26,15 +26,25 @@
 }
 
 .right-image {
-    display: inline-block;
-    position: relative;
     width: 50%;
-    text-align: center;
-    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 50px 20px;
+    align-self: baseline;
 }
 
 .image {
     width: 380px;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: center;
+}
+
+.image-info {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
 }
 
 .text {
@@ -43,15 +53,16 @@
 }
 
 .date {
-    position: absolute;
-    bottom: 1%;
-    right: 25%;
+    align-self: flex-end;
+    margin: 10px 20px;
+    font-weight: bold;
 }
 
 .button-section {
     position: fixed;
     margin: 0px 50px;
     right: 0;
+    bottom: 70px;
 }
 
 .button {
