@@ -21,16 +21,16 @@
 <div id='mobile-menu' class='hidden'>
     <ul>
         <li>
-            <a class="active" href="#home">Noticias</a>
+            <a class="active" href="#home" (click)='showMenu()'>Noticias</a>
         </li>
         <li>
-            <a href="#news">Publicaciones</a>
+            <a href="#news" (click)='showMenu()'>Publicaciones</a>
         </li>
         <li>
-            <a href="#contact">Proyectos</a>
+            <a href="#contact" (click)='showMenu()'>Proyectos</a>
         </li>
         <li>
-            <a [routerLink]=" ['blog','view'] ">Blog </a>
+            <a [routerLink]=" ['blog','view'] " (click)='showMenu()'>Blog </a>
         </li>
     </ul>
 </div>
