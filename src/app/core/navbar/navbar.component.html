@@ -1,23 +1,36 @@
 <nav class="navbar">
-
     <ul>
-
         <li>
             <a class="active" href="#home">Noticias</a>
         </li>
-
         <li>
             <a href="#news">Publicaciones</a>
         </li>
-
         <li>
             <a href="#contact">Proyectos</a>
         </li>
-
         <li>
             <a [routerLink]=" ['blog','list'] ">Blogs </a>
         </li>
-
     </ul>
-
+    <ul id='icon-menu' (click)='showMenu()'>
+        <li>Icono</li>
+    </ul>
 </nav>
+
+<div id='mobile-menu' class='hidden'>
+    <ul>
+        <li>
+            <a class="active" href="#home" (click)='showMenu()'>Noticias</a>
+        </li>
+        <li>
+            <a href="#news" (click)='showMenu()'>Publicaciones</a>
+        </li>
+        <li>
+            <a href="#contact" (click)='showMenu()'>Proyectos</a>
+        </li>
+        <li>
+            <a [routerLink]=" ['blog','view'] " (click)='showMenu()'>Blog </a>
+        </li>
+    </ul>
+</div>

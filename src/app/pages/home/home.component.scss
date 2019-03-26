@@ -1,8 +1,7 @@
 @import "./../../../assets/sass/text.scss";
 @import "../../../assets/sass/colors.scss";
 @import "../../../assets/sass/buttons.scss";
-
-#subtitle{
+#subtitle {
     margin-top: 11px;
 }
 
@@ -26,8 +25,7 @@
     margin-top: 34px;
 }
 
-
-.hero-container{
+.hero-container {
     position: relative;
     width: 100%;
     height: 703px;
@@ -40,7 +38,7 @@
     width: 278px;
 }
 
-.description-container{
+.description-container {
     position: absolute;
     bottom: 200px;
     width: 200px;
@@ -62,15 +60,20 @@
 
 .about-container {
     width: 50%;
-    height: 587px;
+    height: auto;
 }
 
 .more-info-container {
     width: 50%;
-    height: 587px;
+    height: auto;
     background-color: $white;
 }
 
-
-
-
+@media screen and (max-width:600px) {
+    .about-container {
+        width: 100%;
+    }
+    .more-info-container {
+        width: 100%;
+    }
+}

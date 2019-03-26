@@ -12,4 +12,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  showMenu() {
+    const menuOptions = document.getElementById('mobile-menu');
+    if (menuOptions.classList.contains('hidden')) {
+      menuOptions.classList.remove('hidden');
+    } else {
+      menuOptions.classList.add('hidden');
+    }
+  }
+
 }

@@ -1,12 +1,10 @@
 @import './../../../assets/sass/colors.scss';
-
-
 .navbar {
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: flex-end;
-    background-color:$black;
+    background-color: $black;
     ul {
         align-self: center;
     }
@@ -18,5 +16,46 @@
         text-align: center;
         font-size: 18px;
         color: $white;
+    }
+    #icon-menu {
+        display: none;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#mobile-menu {
+    height: -webkit-fill-available;
+    background-color: $gray;
+    ul {
+        padding: 0px;
+        width: 100%;
+        padding-top: 40px;
+        li {
+            background-color: $black;
+            margin: 23px 0px;
+            text-align: center;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                color: $white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .navbar {
+        ul {
+            display: none;
+        }
+        #icon-menu {
+            display: flex;
+            color: $white;
+        }
     }
 }
